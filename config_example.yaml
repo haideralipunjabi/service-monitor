@@ -1,0 +1,8 @@
+servers:
+  - name: Server 1
+    ip: 192.168.1.1
+  - name: Server 2
+    ip: 192.168.1.2
+telegram:
+  api_key: <api_key_of_telegram_bot>
+  chat_id: <chat_id_to_send_messages_to>
