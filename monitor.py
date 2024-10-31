@@ -1,8 +1,11 @@
 import subprocess
 import yaml
 import requests
+import pathlib
+import os
 
-data = yaml.load(open("config.yaml", "r"), Loader=yaml.Loader)
+BASE = pathlib.Path(__file__).parent.resolve()
+data = yaml.load(open(os.path.join(BASE, "config.yaml"), "r"), Loader=yaml.Loader)
 for server in data["servers"]:
     response = subprocess.call(
         ["ping", "-c", "1", server["ip"]],
