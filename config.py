@@ -25,7 +25,7 @@ if args.delete:
     print("Deleting a server")
     list_servers()
     idx = int(input("Enter number to delete: "))
-    if idx > 1 and idx <= len(data["servers"]):
+    if idx >= 1 and idx <= len(data["servers"]):
         del data["servers"][idx - 1]
         yaml.dump(data, open("config.yaml", "w"), Dumper=yaml.Dumper)
         print("Deleted")
